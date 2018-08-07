@@ -7,11 +7,13 @@ import VoicesList from './VoicesList';
 
 class VoicesPage extends Component {
   render(){
-    const { voices } = this.props
-    console.log(voices)
+    const { results, count } = this.props.voices
+    const spacing = 16
 
     return(
-      <div>Hello</div>
+      <VoicesList results={results}
+                  count={count}
+                  spacing={spacing} />
     )
   }
 }

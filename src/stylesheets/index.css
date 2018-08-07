@@ -6,3 +6,11 @@ a {
   color: white;
   text-decoration: none;
 }
+
+.pdt-30 {
+  padding-top: 30px;
+}
+
+.pdb-30 {
+  padding-bottom: 30px;
+}
