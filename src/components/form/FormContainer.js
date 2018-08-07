@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import _ from 'lodash';
+import * as utteranceActions from '../../actions/utteranceActions';
 import VoiceSelect from './VoiceSelect'
 import TextInput from './TextInput';
 import MetadataSelect from './MetadataSelect';
@@ -43,16 +45,20 @@ class FormContainer extends Component {
 
   handleMetadataSelect = event => {
     const { value } = event.target;
-    const { values } = this.state.metadata.emotion
+    const { values } = this.state.metadata.emotion;
 
     this.setState({ metadata: { emotion: { default: value, values: values }}});
   }
 
   onSubmit = event => {
-    const { voiceId } = this.state
+    const { voiceId, text, metadata } = this.state;
 
-    event.preventDefault()
+    event.preventDefault();
     this.checkErrors(voiceId);
+
+    if(!this.state.errors.voice){
+      this.props.actions.generateUtterance({voiceId, text, metadata});
+    }
   }
 
   checkErrors = voiceId => {
@@ -117,6 +123,13 @@ function mapStateToProps(state){
   };
 }
 
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators(utteranceActions, dispatch)
+  }
+}
+
 export default connect(
-  mapStateToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(FormContainer);

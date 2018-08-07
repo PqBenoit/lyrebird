@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import * as voicesActions from '../../actions/voiceActions';
 import VoicesList from './VoicesList';
 
 class VoicesContainer extends Component {
@@ -17,8 +15,7 @@ class VoicesContainer extends Component {
 }
 
 VoicesContainer.propTypes = {
-  voices: PropTypes.object.isRequired,
-  actions: PropTypes.object.isRequired
+  voices: PropTypes.object.isRequired
 }
 
 function mapStateToProps(state){
@@ -27,13 +24,6 @@ function mapStateToProps(state){
   };
 }
 
-function mapDispatchToProps(dispatch) {
-  return {
-    actions: bindActionCreators(voicesActions, dispatch)
-  }
-}
-
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps
+  mapStateToProps
 )(VoicesContainer);
