@@ -5,10 +5,11 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 
-const MetadataSelect = ({ default_value, values, handleSelect }) => (
+const MetadataSelect = ({ default_value, values, handleSelect, disabled }) => (
   <FormControl required>
     <InputLabel htmlFor="voice-required">Emotion</InputLabel>
     <Select
+      disabled={disabled}
       value={default_value}
       onChange={handleSelect}
       name="emotion"
@@ -28,7 +29,8 @@ const MetadataSelect = ({ default_value, values, handleSelect }) => (
 MetadataSelect.propTypes = {
   default_value: PropTypes.string.isRequired,
   values: PropTypes.array.isRequired,
-  handleSelect: PropTypes.func.isRequired
+  handleSelect: PropTypes.func.isRequired,
+  disabled: PropTypes.bool.isRequired
 }
 
 export default MetadataSelect;

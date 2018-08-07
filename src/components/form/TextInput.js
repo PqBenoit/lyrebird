@@ -2,8 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import TextField from '@material-ui/core/TextField';
 
-const TextInput = ({ text, handleChange }) => (
+const TextInput = ({ text, handleChange, disabled }) => (
   <TextField
+    disabled={disabled}
     required
     label="Text"
     multiline
@@ -16,7 +17,8 @@ const TextInput = ({ text, handleChange }) => (
 
 TextInput.propTypes = {
   text: PropTypes.string.isRequired,
-  handleChange: PropTypes.func.isRequired
+  handleChange: PropTypes.func.isRequired,
+  disabled: PropTypes.bool.isRequired
 }
 
 export default TextInput;

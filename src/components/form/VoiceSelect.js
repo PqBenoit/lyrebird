@@ -5,10 +5,11 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 
-const VoiceSelect = ({ voiceId, results, handleSelect }) => (
+const VoiceSelect = ({ voiceId, results, handleSelect, disabled }) => (
   <FormControl required>
     <InputLabel htmlFor="voice-required">Voice</InputLabel>
     <Select
+      disabled={disabled}
       value={voiceId}
       onChange={handleSelect}
       name="voice"
@@ -28,7 +29,8 @@ const VoiceSelect = ({ voiceId, results, handleSelect }) => (
 VoiceSelect.propTypes = {
   voiceId: PropTypes.string.isRequired,
   results: PropTypes.array.isRequired,
-  handleSelect: PropTypes.func.isRequired
+  handleSelect: PropTypes.func.isRequired,
+  disabled: PropTypes.bool.isRequired
 }
 
 export default VoiceSelect;

@@ -11,8 +11,13 @@ hr {
   width: 300px;
 }
 
+.center {
+  text-align: center;
+}
+
 .form-container {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
 }
 

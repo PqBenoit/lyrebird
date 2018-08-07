@@ -9,6 +9,7 @@ import TextInput from './TextInput';
 import MetadataSelect from './MetadataSelect';
 import SubmitButton from './SubmitButton';
 import Error from './Error';
+import Loader from './Loader';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 
@@ -27,7 +28,24 @@ class FormContainer extends Component {
       },
       errors: {
         voice: false
-      }
+      },
+      disabled: false
+    }
+  }
+
+  componentWillReceiveProps(nextProps){
+    if(nextProps.asyncJob.status === 'done'){
+      this.setState({
+        voiceId: '',
+        text: '',
+        metadata: {
+          emotion: {
+            default: '',
+            values: []
+          }
+        },
+        disabled: false
+      });
     }
   }
 
@@ -57,6 +75,7 @@ class FormContainer extends Component {
     this.checkErrors(voiceId);
 
     if(!this.state.errors.voice){
+      this.setState({ disabled: true })
       this.props.actions.generateUtterance({voiceId, text, metadata});
     }
   }
@@ -79,7 +98,8 @@ class FormContainer extends Component {
 
   render(){
     const { results } = this.props.voices
-    const { voiceId, text, metadata, errors } = this.state
+    const { status } = this.props.asyncJob
+    const { voiceId, text, metadata, errors, disabled } = this.state
 
     return(
       <Grid item xs={12} className='pdt-30 pdb-30'>
@@ -88,24 +108,30 @@ class FormContainer extends Component {
             Generate utterance
           </Typography>
         </Grid>
-        <Grid container justify='center' spacing={Number(16)}>
+        <Grid container justify='center'>
           <form className='form-container' onSubmit={this.onSubmit}>
-            <VoiceSelect voiceId={voiceId}
+            <VoiceSelect disabled={disabled}
+                         voiceId={voiceId}
                          results={results}
                          handleSelect={this.handleVoiceSelect} />
 
-            <TextInput handleChange={this.handleChange}
+            <TextInput disabled={disabled}
+                       handleChange={this.handleChange}
                        text={text} />
 
             <br/>
-            <MetadataSelect default_value={metadata.emotion.default}
+            <MetadataSelect disabled={disabled}
+                            default_value={metadata.emotion.default}
                             values={metadata.emotion.values}
                             handleSelect={this.handleMetadataSelect} />
             <br/>
-            <SubmitButton />
+            <SubmitButton disabled={disabled} />
 
             <Error type='voice'
                    show={errors.voice} />
+
+            <br/>
+            <Loader status={status} />
           </form>
         </Grid>
       </Grid>
@@ -114,12 +140,14 @@ class FormContainer extends Component {
 }
 
 FormContainer.propTypes = {
-  voices: PropTypes.object.isRequired
+  voices: PropTypes.object.isRequired,
+  asyncJob: PropTypes.object.isRequired
 }
 
 function mapStateToProps(state){
   return {
-    voices: state.voices
+    voices: state.voices,
+    asyncJob: state.asyncJob
   };
 }
 

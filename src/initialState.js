@@ -4,7 +4,7 @@ export default {
     results: []
   },
   asyncJob: {
-    id: null,
-    status: null
+    id: '',
+    status: ''
   }
 }
