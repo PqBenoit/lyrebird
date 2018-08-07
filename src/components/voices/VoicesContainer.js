@@ -5,20 +5,18 @@ import { bindActionCreators } from 'redux';
 import * as voicesActions from '../../actions/voiceActions';
 import VoicesList from './VoicesList';
 
-class VoicesPage extends Component {
+class VoicesContainer extends Component {
   render(){
     const { results, count } = this.props.voices
-    const spacing = 16
 
     return(
       <VoicesList results={results}
-                  count={count}
-                  spacing={spacing} />
+                  count={count} />
     )
   }
 }
 
-VoicesPage.propTypes = {
+VoicesContainer.propTypes = {
   voices: PropTypes.object.isRequired,
   actions: PropTypes.object.isRequired
 }
@@ -38,4 +36,4 @@ function mapDispatchToProps(dispatch) {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(VoicesPage);
+)(VoicesContainer);

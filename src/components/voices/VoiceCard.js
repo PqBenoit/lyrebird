@@ -7,7 +7,7 @@ import Typography from '@material-ui/core/Typography';
 const VoiceCard = ({ result }) => (
   <Card>
    <CardContent>
-     <Typography variant="headline" component="h2">
+     <Typography variant="subheading" component="h3">
        {result.name}
      </Typography>
      <Typography color="textSecondary">

@@ -7,6 +7,19 @@ a {
   text-decoration: none;
 }
 
+hr {
+  width: 300px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.mgt-15 {
+  margin-top: 15px;
+}
+
 .pdt-30 {
   padding-top: 30px;
 }
