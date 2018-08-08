@@ -28,10 +28,32 @@ export function getAsyncJob(asyncJobId){
 }
 
 export function getUtterances(url = null){
-  console.log(url)
   if(url === null){
     return authenticatedAxios.get(`${baseUrl}/utterances`);
   } else {
     return authenticatedAxios.get(url);
   }
+}
+
+export function getUtteranceDownloadLink(utterance){
+  return authenticatedAxios.get(`${baseUrl}/utterances/${utterance.id}/download?no_redirect=true`);
+}
+
+export function downloadUtterance(utterance){
+  getUtteranceDownloadLink(utterance).then(response => {
+    axios({
+      url: response.data.url,
+      method: 'GET',
+      responseType: 'blob',
+    }).then((response) => {
+       const url = window.URL.createObjectURL(new Blob([response.data]));
+       const link = document.createElement('a');
+       link.href = url;
+       link.setAttribute('download', `${utterance.text.substring(0, 10)}.wav`);
+       document.body.appendChild(link);
+       link.click();
+    });
+  }).catch(error => {
+    throw(error);
+  });
 }

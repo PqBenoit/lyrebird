@@ -2,8 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Button from '@material-ui/core/Button';
 
+const style = {
+  margin: '0 10px'
+}
+
 const PaginationButton = ({ url, type, loadUtterances }) => (
   <Button
+    style={style}
     disabled={url.length === 0}
     className='mgt-15'
     variant="contained"

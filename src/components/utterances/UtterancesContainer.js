@@ -9,6 +9,21 @@ import Grid from '@material-ui/core/Grid';
 import * as utteranceActions from '../../actions/utteranceActions';
 
 class Utterances extends Component {
+  constructor(props){
+    super(props)
+
+    this.state = {
+      utterances: props.utterances,
+      search: ''
+    }
+  }
+
+  componentWillReceiveProps(nextProps){
+    if(this.state.utterances !== nextProps.utterances){
+      this.setState({ utterances: nextProps.utterances })
+    }
+  }
+
   fetchVoiceName = (voiceId) => {
     const { results } = this.props.voices
 
@@ -27,15 +42,35 @@ class Utterances extends Component {
     this.props.actions.loadUtterances(url);
   }
 
+  onSearchChange = (event) => {
+    const { value } = event.target;
+    const { results } = this.props.utterances;
+
+    const filterredResults = _.filter(results, result => {
+      return result.text.toLowerCase().includes(value.toLowerCase());
+    });
+
+    this.setState({
+      search: value,
+      utterances: {
+        ...this.state.utterance,
+        results: filterredResults
+      }
+    });
+  }
+
   render(){
-    const { results, count, next, previous } = this.props.utterances
-    console.log(this.props.utterances)
+    const { search } = this.state
+    const { results } = this.state.utterances
+    const { count, next, previous } = this.props.utterances
 
     return(
       <div>
         <UtterancesTable results={results}
                          count={count}
-                         fetchVoiceName={this.fetchVoiceName}/>
+                         search={search}
+                         fetchVoiceName={this.fetchVoiceName}
+                         onSearchChange={this.onSearchChange} />
 
         <Grid item xs={12} className='pdt-20 pdb-20'>
           <Grid container justify='center' className='pdt-20 pdb-20'>

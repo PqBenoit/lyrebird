@@ -41,4 +41,10 @@ Let's fetch from previous:
 previous= '...?offset=20&limit=5'
 next = '...?offset=25&limit=5'
 
-Why not keep the limit to 10 ?
+The api does not seem to keep 10 by default when arriving at the last page :/
+
+
+- Improvments that could be brought to the app:
+Styles/Responsive design
+Tests
+Better pagination

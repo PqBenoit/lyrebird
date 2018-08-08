@@ -8,7 +8,7 @@ const TextInput = ({ text, handleChange, disabled }) => (
     required
     label="Text"
     multiline
-    rowsMax="4"
+    rowsMax="6"
     value={text}
     onChange={handleChange}
     margin="normal"
