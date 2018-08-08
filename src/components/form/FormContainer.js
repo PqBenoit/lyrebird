@@ -104,7 +104,7 @@ class FormContainer extends Component {
     const { voiceId, text, metadata, errors, disabled } = this.state
 
     return(
-      <Grid item xs={12} className='pdt-20 pdb-20'>
+      <Grid item xs={12} className='pdt-20 pdb-20 form-container'>
         <Grid container justify='center' className='pdt-20 pdb-20'>
           <Typography variant="headline" component="h2">
             Generate utterance

@@ -9,7 +9,7 @@ const style = {
 const Error = ({ type, show }) => {
   if(show){
     return(
-      <Typography color='error' style={style}>
+      <Typography color='error' style={style} className='error'>
         {`${type} is required`}
       </Typography>
     );

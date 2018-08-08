@@ -36,7 +36,7 @@ class UtteranceRow extends Component {
     const { utterance, fetchVoiceName, audioFileUrl } = this.state;
 
     return(
-      <TableRow key={utterance.id}>
+      <TableRow key={utterance.id} className='utterance-row'>
         <TableCell>
           <Player url={audioFileUrl} />
         </ TableCell>

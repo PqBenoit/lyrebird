@@ -10,7 +10,7 @@ const style = {
 
 const MetadataSelect = ({ default_value, values, handleSelect, disabled }) => (
   <TextField
-    className='w-175'
+    className='w-175 metadata-select'
     style={style}
     disabled={disabled}
     required

@@ -10,7 +10,7 @@ const PaginationButton = ({ url, type, loadUtterances }) => (
   <Button
     style={style}
     disabled={url.length === 0}
-    className='mgt-15'
+    className='mgt-15 pagination-button'
     variant="contained"
     color="primary"
     onClick={() => {loadUtterances(url)}}

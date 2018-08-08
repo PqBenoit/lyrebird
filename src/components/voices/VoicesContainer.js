@@ -8,8 +8,10 @@ class VoicesContainer extends Component {
     const { results, count } = this.props.voices
 
     return(
-      <VoicesList results={results}
-                  count={count} />
+      <div className='voices-container'>
+        <VoicesList results={results}
+                    count={count} />
+      </div>
     )
   }
 }

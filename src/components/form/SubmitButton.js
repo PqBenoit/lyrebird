@@ -5,7 +5,7 @@ import Button from '@material-ui/core/Button';
 const SubmitButton = ({ disabled }) => (
   <Button
     disabled={disabled}
-    className='mgt-15'
+    className='mgt-15 submit-button'
     variant="contained"
     color="primary"
     type="submit"

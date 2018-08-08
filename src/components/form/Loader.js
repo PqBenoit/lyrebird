@@ -7,7 +7,7 @@ import Typography from '@material-ui/core/Typography';
 const Loader = ({ status }) => {
   if(status === 'processing'){
     return(
-      <Grid container justify='center'>
+      <Grid container justify='center' className='loader'>
         <div className='center'>
           <CircularProgress />
           <Typography color='primary'>
@@ -18,7 +18,7 @@ const Loader = ({ status }) => {
     );
   } if(status === 'done') {
     return(
-      <Grid container justify='center'>
+      <Grid container justify='center' className='loader'>
         <div className='center hide-in-2'>
           <Typography color='primary'>
             {status}

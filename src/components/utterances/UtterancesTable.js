@@ -12,7 +12,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 
 const UtteranceTable = ({ results, count, search, fetchVoiceName, onSearchChange }) => (
-  <Grid item xs={12} className='pdt-20 pdb-20'>
+  <Grid item xs={12} className='pdt-20 pdb-20 utterances-table'>
     <Grid container justify='center' className='pdt-20'>
       <Typography variant="headline" component="h2">
         Utterances

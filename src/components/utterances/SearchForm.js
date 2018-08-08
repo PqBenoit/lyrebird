@@ -4,7 +4,7 @@ import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 
 const SearchForm = ({ search, onSearchChange }) => (
-  <Grid item xs={12}>
+  <Grid item xs={12} className='utterance-search-input'>
     <Grid container justify='left'>
       <form>
         <TextField

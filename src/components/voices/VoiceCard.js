@@ -5,7 +5,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 
 const VoiceCard = ({ result }) => (
-  <Card>
+  <div className='voice-card'>
    <CardContent>
      <Typography variant="subheading" component="h3">
        {result.name}
@@ -14,7 +14,7 @@ const VoiceCard = ({ result }) => (
        {result.description}
      </Typography>
    </CardContent>
-  </Card>
+  </div>
 );
 
 VoiceCard.propTypes = {

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Typography from '@material-ui/core/Typography';
 
 const Count = ({ count, type }) => (
-  <Typography color="textSecondary">
+  <Typography color="textSecondary" className='count'>
     {`${count} ${type} total`}
   </Typography>
 );

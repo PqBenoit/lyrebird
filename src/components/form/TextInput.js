@@ -7,6 +7,7 @@ const TextInput = ({ text, handleChange, disabled }) => (
     disabled={disabled}
     required
     label="Text"
+    className='form-text-input'
     multiline
     rowsMax="6"
     value={text}
