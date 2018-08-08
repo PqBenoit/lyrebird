@@ -1,8 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import Typography from '@material-ui/core/Typography';
-import PlayCircleFilled from '@material-ui/icons/PlayCircleFilled';
-import PauseCircleFilled from '@material-ui/icons/PauseCircleFilled';
 
 const Player = ({ url }) => {
   if(url.length){

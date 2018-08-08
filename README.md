@@ -1,14 +1,41 @@
-create a file called .env in the root of your project and setup your api_key
+## Setup
 
+Clone repo localy:
+```
+git clone https://github.com/PqBenoit/lyrebird.git
+```
+
+```
+cd lyrebird/
+```
+Install packages:
+```
+npm install
+```
+
+To be able to have access to Lyrebird's API,  create a file called .env on the root of your project and setup your api_key:
+```
+touch .env
+```
+In .env file, copy paste with your real api_key:
 ```
 REACT_APP_LYREBIRD_API_KEY=your_api_key
 ```
+Start servers
+```
+npm start
+```
 
-Issue I got:
+## Tests
+To run tests:
+```
+npm test
+```
 
-- loading utterance through next/previous urls
+#### - Issue I got:
+*Loading utterance through next/previous urls*
 
-When total utterance is not a %10 number, arriving on the last page and loading utterances will set the limit on previous property to the remaining utterances on the last page.
+When total utterance is not a modulo 10 number, arriving on the last page and loading utterances will set the limit on previous property to the remaining utterances on the last page.
 
 Example:
 I got 35 utterances total
@@ -41,10 +68,10 @@ Let's fetch from previous:
 previous= '...?offset=20&limit=5'
 next = '...?offset=25&limit=5'
 
-The api does not seem to keep 10 by default when arriving at the last page :/
+The api does not seem to keep 10 by default when arriving at the last page.
 
 
-- Improvments that could be brought to the app:
-Styles/Responsive design
-Tests
-Better pagination
+#### - Improvments that could be made:
+- Styles/Responsive design
+- Test coverage
+- Utterances pagination

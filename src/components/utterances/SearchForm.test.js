@@ -5,9 +5,7 @@ import SearchForm from './SearchForm';
 function setup(){
   const props = {
     search: 'Hello',
-    onSearchChange: function(){
-      console.log('hello there');
-    }
+    onSearchChange: function(){}
   };
 
   return shallow(<SearchForm {...props} />);

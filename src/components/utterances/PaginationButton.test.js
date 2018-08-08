@@ -6,9 +6,7 @@ function setup(){
   const props = {
     url: 'http://localhost:3000/',
     type: 'previous',
-    loadUtterances: function(){
-      console.log('hello there');
-    }
+    loadUtterances: function(){}
   };
 
   return shallow(<PaginationButton {...props} />);
