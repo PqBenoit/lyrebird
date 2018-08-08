@@ -65,7 +65,7 @@ class Utterances extends Component {
     const { count, next, previous } = this.props.utterances
 
     return(
-      <div>
+      <div className='mg-20'>
         <UtterancesTable results={results}
                          count={count}
                          search={search}

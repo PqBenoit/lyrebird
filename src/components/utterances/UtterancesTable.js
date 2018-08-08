@@ -13,13 +13,12 @@ import TableRow from '@material-ui/core/TableRow';
 
 const UtteranceTable = ({ results, count, search, fetchVoiceName, onSearchChange }) => (
   <Grid item xs={12} className='pdt-20 pdb-20'>
-    <Grid container justify='center' className='pdt-20 pdb-20'>
+    <Grid container justify='center' className='pdt-20'>
       <Typography variant="headline" component="h2">
         Utterances
       </Typography>
     </Grid>
     <Grid container justify='center'>
-      <Count count={count} type='utterances' />
       <SearchForm search={search} onSearchChange={onSearchChange} />
     </Grid>
     <Table>
@@ -44,6 +43,9 @@ const UtteranceTable = ({ results, count, search, fetchVoiceName, onSearchChange
         }
       </TableBody>
     </Table>
+    <Grid container justify='center' className='pdt-20'>
+      <Count count={count} type='utterances' />
+    </Grid>
   </Grid>
 )
 
