@@ -109,7 +109,7 @@ class FormContainer extends Component {
           </Typography>
         </Grid>
         <Grid container justify='center'>
-          <form className='form-container' onSubmit={this.onSubmit}>
+          <form onSubmit={this.onSubmit}>
             <VoiceSelect disabled={disabled}
                          voiceId={voiceId}
                          results={results}
@@ -119,18 +119,16 @@ class FormContainer extends Component {
                        handleChange={this.handleChange}
                        text={text} />
 
-            <br/>
-            <MetadataSelect disabled={disabled}
-                            default_value={metadata.emotion.default}
-                            values={metadata.emotion.values}
-                            handleSelect={this.handleMetadataSelect} />
-            <br/>
+           <MetadataSelect disabled={disabled}
+                           default_value={metadata.emotion.default}
+                           values={metadata.emotion.values}
+                           handleSelect={this.handleMetadataSelect} />
+
             <SubmitButton disabled={disabled} />
 
             <Error type='voice'
                    show={errors.voice} />
 
-            <br/>
             <Loader status={status} />
           </form>
         </Grid>

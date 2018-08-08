@@ -15,10 +15,19 @@ hr {
   text-align: center;
 }
 
-.form-container {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
+.hide-in-2 {
+  display: block;
+  opacity: 1;
+  -moz-animation: hide 0s ease-in 2s forwards;
+  -webkit-animation: hide 0s ease-in 2s forwards;
+  -o-animation: hide 0s ease-in 2s forwards;
+  animation: hide 0s ease-in 2s forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+.w-175 {
+  width: 175px;
 }
 
 .mgt-15 {
@@ -31,4 +40,18 @@ hr {
 
 .pdb-30 {
   padding-bottom: 30px;
+}
+
+@keyframes hide {
+  to {
+    opacity: 0;
+    display: none;
+  }
+}
+
+@-webkit-keyframes hide {
+  to {
+    opacity: 0;
+    display: none;
+  }
 }

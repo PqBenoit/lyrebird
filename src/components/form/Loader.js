@@ -15,7 +15,17 @@ const Loader = ({ status }) => {
           </Typography>
         </div>
       </Grid>
-    )
+    );
+  } if(status === 'done') {
+    return(
+      <Grid container justify='center'>
+        <div className='center hide-in-2'>
+          <Typography color='primary'>
+            {status}
+          </Typography>
+        </div>
+      </Grid>
+    );
   } else {
     return null;
   }
