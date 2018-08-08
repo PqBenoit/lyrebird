@@ -34,12 +34,12 @@ hr {
   margin-top: 15px;
 }
 
-.pdt-30 {
-  padding-top: 30px;
+.pdt-20 {
+  padding-top: 20px;
 }
 
-.pdb-30 {
-  padding-bottom: 30px;
+.pdb-20 {
+  padding-bottom: 20px;
 }
 
 @keyframes hide {

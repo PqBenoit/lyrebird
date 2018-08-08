@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import VoicesContainer from './voices/VoicesContainer';
 import FormContainer from './form/FormContainer';
+import UtteranceContainer from './utterances/UtterancesContainer'
 import Header from './commons/Header.js';
 import '../stylesheets/index.css';
 
@@ -10,8 +11,8 @@ class App extends Component {
       <div>
         <Header />
         <VoicesContainer />
-        <hr/>
         <FormContainer />
+        <UtteranceContainer />
       </div>
     );
   }

@@ -102,14 +102,14 @@ class FormContainer extends Component {
     const { voiceId, text, metadata, errors, disabled } = this.state
 
     return(
-      <Grid item xs={12} className='pdt-30 pdb-30'>
-        <Grid container justify='center' className='pdt-30 pdb-30'>
+      <Grid item xs={12} className='pdt-20 pdb-20'>
+        <Grid container justify='center' className='pdt-20 pdb-20'>
           <Typography variant="headline" component="h2">
             Generate utterance
           </Typography>
         </Grid>
-        <Grid container justify='center'>
-          <form onSubmit={this.onSubmit}>
+        <Grid container justify='center' className='pdb-20'>
+          <form onSubmit={this.onSubmit} className='pdb-20'>
             <VoiceSelect disabled={disabled}
                          voiceId={voiceId}
                          results={results}

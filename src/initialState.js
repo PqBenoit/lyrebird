@@ -6,5 +6,9 @@ export default {
   asyncJob: {
     id: '',
     status: ''
+  },
+  utterances: {
+    count: 0,
+    results: []
   }
 }

@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import VoiceCard from './VoiceCard';
-import VoicesCount from './VoicesCount';
+import Count from '../commons/Count';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 
 const VoicesList = ({ results, count }) => (
-  <Grid item xs={12} className='pdt-30 pdb-30'>
-    <Grid container justify='center' className='pdt-30 pdb-30'>
+  <Grid item xs={12} className='pdt-20 pdb-20'>
+    <Grid container justify='center' className='pdt-20 pdb-20'>
       <Typography variant="headline" component="h2">
         Voices
       </Typography>
@@ -19,8 +19,8 @@ const VoicesList = ({ results, count }) => (
         </Grid>
       ))}
     </Grid>
-    <Grid container justify='center' className='pdt-30 pdb-30'>
-      <VoicesCount count={count} />
+    <Grid container justify='center' className='pdt-20 pdb-20'>
+      <Count count={count} type='voices' />
     </Grid>
   </Grid>
 )

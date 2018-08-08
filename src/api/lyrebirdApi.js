@@ -7,7 +7,7 @@ const authenticatedAxios = axios.create(
 const baseUrl = 'https://custom.lyrebird.ai/api/v0';
 
 export function getVoices(){
-  return authenticatedAxios.get(`${baseUrl}/voices`)
+  return authenticatedAxios.get(`${baseUrl}/voices`);
 }
 
 export function postUtterance(params){
@@ -25,4 +25,8 @@ export function postUtterance(params){
 
 export function getAsyncJob(asyncJobId){
   return authenticatedAxios.get(`${baseUrl}/async_jobs/${asyncJobId}`);
+}
+
+export function getUtterances(){
+  return authenticatedAxios.get(`${baseUrl}/utterances`);
 }
