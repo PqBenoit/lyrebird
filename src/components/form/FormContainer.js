@@ -46,6 +46,8 @@ class FormContainer extends Component {
         },
         disabled: false
       });
+
+      this.props.actions.loadUtterances();
     }
   }
 

@@ -9,6 +9,8 @@ export default {
   },
   utterances: {
     count: 0,
+    previous: '',
+    next: '',
     results: []
   }
 }

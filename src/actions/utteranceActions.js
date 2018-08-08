@@ -7,8 +7,6 @@ export function generateUtteranceSuccess(async_job_id) {
 }
 
 export function loadUtterancesSuccess(utterances){
-  console.log('in loadUtterancesSuccess');
-  console.log(utterances);
   return { type: types.LOAD_UTTERANCES_SUCCESS, utterances }
 }
 
@@ -22,10 +20,9 @@ export function generateUtterance(params) {
   }
 }
 
-export function loadUtterances() {
+export function loadUtterances(url = null) {
   return function(dispatch){
-    return getUtterances().then(response => {
-      console.log(response);
+    return getUtterances(url).then(response => {
       dispatch(loadUtterancesSuccess(response.data));
     }).catch(error => {
       throw(error);

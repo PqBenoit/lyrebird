@@ -27,6 +27,11 @@ export function getAsyncJob(asyncJobId){
   return authenticatedAxios.get(`${baseUrl}/async_jobs/${asyncJobId}`);
 }
 
-export function getUtterances(){
-  return authenticatedAxios.get(`${baseUrl}/utterances`);
+export function getUtterances(url = null){
+  console.log(url)
+  if(url === null){
+    return authenticatedAxios.get(`${baseUrl}/utterances`);
+  } else {
+    return authenticatedAxios.get(url);
+  }
 }
