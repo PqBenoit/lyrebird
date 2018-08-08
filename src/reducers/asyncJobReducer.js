@@ -1,5 +1,5 @@
 import * as types from '../actions/actionTypes.js';
-import initialState from '../initialState';
+import initialState from './initialState';
 
 export default function asyncJobReducer(state = initialState.asyncJob, action){
   switch (action.type) {

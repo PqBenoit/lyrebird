@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import VoicesList from './VoicesList';
 
-class VoicesContainer extends Component {
+export class VoicesContainer extends Component {
   render(){
     const { results, count } = this.props.voices
 

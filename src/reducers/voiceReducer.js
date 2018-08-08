@@ -1,5 +1,5 @@
 import * as types from '../actions/actionTypes.js';
-import initialState from '../initialState';
+import initialState from './initialState';
 
 export default function voiceReducer(state = initialState.voices, action){
   switch (action.type) {

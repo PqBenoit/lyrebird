@@ -8,7 +8,7 @@ import PaginationButton from './PaginationButton';
 import Grid from '@material-ui/core/Grid';
 import * as utteranceActions from '../../actions/utteranceActions';
 
-class Utterances extends Component {
+export class Utterances extends Component {
   constructor(props){
     super(props)
 
@@ -65,7 +65,7 @@ class Utterances extends Component {
     const { count, next, previous } = this.props.utterances
 
     return(
-      <div className='mg-20'>
+      <div className='mg-20 utterances-container'>
         <UtterancesTable results={results}
                          count={count}
                          search={search}
